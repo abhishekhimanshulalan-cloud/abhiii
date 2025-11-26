@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Yasmin Chuhiya</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: radial-gradient(circle, #ffb6d9, #ff6fb5, #ff2e94);
+        text-align: center;
+        overflow-x: hidden;
+        color: white;
+    }
+
+    /* Glitter Name */
+    .glitter {
+        font-size: 50px;
+        font-weight: bold;
+        margin-top: 30px;
+        background: linear-gradient(90deg, #ffd700, #ff6ec7, #ffffff);
+        background-size: 300%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: glitter 4s infinite linear;
+    }
+
+    @keyframes glitter {
+        0% { background-position: 0%; }
+        100% { background-position: 300%; }
+    }
+
+    /* Section Title */
+    h2 {
+        color: gold;
+        text-shadow: 0 0 15px gold;
+    }
+
+    /* Slideshow */
+    .slideshow {
+        width: 80%;
+        height: 380px;
+        margin: 30px auto;
+        border-radius: 25px;
+        overflow: hidden;
+        border: 3px solid gold;
+        box-shadow: 0 0 25px gold;
+    }
+
+    .slides {
+        display: flex;
+        width: 800%;
+        animation: slide 32s infinite;
+    }
+
+    .slides img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+    }
+
+    @keyframes slide {
+        0% { margin-left: 0%; }
+        12% { margin-left: -100%; }
+        24% { margin-left: -200%; }
+        36% { margin-left: -300%; }
+        48% { margin-left: -400%; }
+        60% { margin-left: -500%; }
+        72% { margin-left: -600%; }
+        84% { margin-left: -700%; }
+        100% { margin-left: 0%; }
+    }
+
+    /* Shayari Box */
+    .shayari {
+        width: 80%;
+        margin: 25px auto;
+        padding: 25px;
+        font-size: 22px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.2);
+        border: 2px solid gold;
+        color: #fff;
+        box-shadow: 0 0 25px gold;
+        line-height: 1.7;
+        backdrop-filter: blur(4px);
+    }
+
+    /* Floating Glow Hearts */
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        font-size: 30px;
+        color: #ff0066;
+        text-shadow: 0 0 20px #ff3c98;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+        0%   { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-900px); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="/38-Michael-Riepen-Happy-Birthday(chosic.com).mp3" type="audio/mpeg">
+</audio>
+
+<!-- Glitter Name -->
+<h1 class="glitter">🎉 Happy Birthday Yasmin Chuhiya 🎉</h1>
+
+<!-- Slideshow -->
+<div class="slideshow">
+    <div class="slides">
+        <img src="/IMG_20251126_074428_697.jpg">
+        <img src="/IMG_20251126_074431_620.jpg">
+        <img src="/IMG_20251126_074435_997.jpg">
+        <img src="/IMG_20251126_074438_643.jpg">
+        <img src="/IMG_20251126_074441_487.jpg">
+        <img src="/IMG_20251126_074800_211.jpg">
+        <img src="/IMG_20251126_074757_931.jpg">
+        <img src="/IMG_20251126_074755_606.jpg">
+    </div>
+</div>
+
+<!-- Shayari -->
+<div class="shayari">
+    💖 *Teri muskurahat se hi mehakte hain mere lamhe,* <br>
+    🌸 *Teri har ek ada pe dil ye fida ho jaye,* <br>
+    ✨ *Yasmin Chuhiya… tu hai toh har pal roshan lagta hai,* <br>
+    ❤️ *Tu hi meri zindagi ka haseen sa tota hua taara hai.* 💖
+</div>
+
+<h2>🎂 Have a Magical Birthday, Princess! ✨</h2>
+
+<!-- Floating Hearts -->
+<script>
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => { heart.remove(); }, 7000);
+}, 400);
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Music with Bottom Button</title>
+<style>
+    body {
+        font-family: Arial;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Bottom music button */
+    #musicBtn {
+        position: fixed;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 20px;
+        background: #ff0066;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    }
+</style>
+</head>
+<body>
+
+<h2>Music Add Example</h2>
+<p>Page load hote hi music play ho jayega.</p>
+
+<!-- Hidden Audio -->
+<audio id="bgMusic" loop>
+    <source src="/38-Michael-Riepen-Happy-Birthday(chosic.com).mp3" type="audio/mpeg">
+</audio>
+
+<!-- Bottom Button -->
+<button id="musicBtn">Pause Music</button>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("musicBtn");
+
+    // Auto play (Note: Mobile me user interaction ke baad play hota hai)
+    music.play();
+
+    btn.addEventListener("click", () => {
+        if (music.paused) {
+            music.play();
+            btn.textContent = "Pause Music";
+        } else {
+            music.pause();
+            btn.textContent = "Play Music";
+        }
+    });
+</script>
+
+</body>
+</html>
